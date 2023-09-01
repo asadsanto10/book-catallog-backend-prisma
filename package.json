@@ -5,12 +5,13 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-		"build": "tsc",
+		"build": "prisma generate && tsc",
 		"lint": "tsc --noEmit && eslint src/**/*.ts{,x} --cache --max-warnings=0",
 		"lint:fix": "eslint src/**/*.ts{,x} --fix",
 		"lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
 		"prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-		"lint:prettier": "yarn lint:check && yarn prettier:check"
+		"lint:prettier": "yarn lint:check && yarn prettier:check",
+		"postinstall": "prisma generate"
 	},
 	"lint-staged": {
 		"src/**/*.ts": "yarn lint:prettier"

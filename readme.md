@@ -6,6 +6,18 @@
  https://book-catallog-backend-prisma.vercel.app/
 ```
 
+## Admin Token (Bearer token):
+
+```token
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiZmNiY2EyNC1hYjg4LTQyN2EtYWY0Ny0yZDg1OTM4YjE5ODEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTM1OTI2MTMsImV4cCI6MTcyNTEyODYxM30.fywIBnRuSL4FfZGe-aGPGN6FiayBPJbz1apFlM8s9ys
+```
+
+## Customer Token (Bearer token):
+
+```token
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MWNhNjUyZi03MTg3LTQzNzItYWZjMS1mOTg5OTVhNjQ1ZjkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2OTM1OTM3MzUsImV4cCI6MTcyNTEyOTczNX0.K9lZuKAqO0QwS4bM_ZflCBurmG9eJrngQ4Fv6j0XbvY
+```
+
 ### Application Routes:
 
 #### User
