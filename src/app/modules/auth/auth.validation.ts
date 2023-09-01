@@ -28,6 +28,20 @@ const createZodSchema = z.object({
 	}),
 });
 
+const signinZodSchema = z.object({
+	body: z.object({
+		email: z
+			.string({
+				required_error: 'email is required',
+			})
+			.email({ message: 'email must be a valid email address' }),
+		password: z.string({
+			required_error: 'password is required',
+		}),
+	}),
+});
+
 export const authValidation = {
 	createZodSchema,
+	signinZodSchema,
 };
