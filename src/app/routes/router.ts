@@ -3,6 +3,7 @@ import httpStatus from 'http-status';
 import { authRoutes } from '../modules/auth/auth.route';
 import { bookRoutes } from '../modules/book/book.route';
 import { categoryRoutes } from '../modules/category/category.route';
+import { orderRoutes } from '../modules/order/order.route';
 import { userRoutes } from '../modules/user/user.route';
 
 const router = express.Router();
@@ -15,6 +16,7 @@ router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/books', bookRoutes);
+router.use('/orders', orderRoutes);
 
 // not found route
 router.use((req: Request, res: Response, next: NextFunction) => {

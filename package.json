@@ -4,6 +4,7 @@
 	"main": "app.js",
 	"license": "MIT",
 	"scripts": {
+		"start": "node dist/app.js",
 		"dev": "ts-node-dev --respawn --transpile-only src/app.ts",
 		"build": "prisma generate && tsc",
 		"lint": "tsc --noEmit && eslint src/**/*.ts{,x} --cache --max-warnings=0",
