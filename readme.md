@@ -34,9 +34,9 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MWNhNjUyZi03MTg3LTQz
 
 - api/v1/categories/create-category (POST)
 - api/v1/categories (GET)
-- api/v1/categories/6177a5b87d32123f08d2f5d4 (Single GET)
-- api/v1/categories/6177a5b87d32123f08d2f5d4 (PATCH)
-- api/v1/categories/6177a5b87d32123f08d2f5d4 (DELETE)
+- api/v1/categories/5bd2f37a-ff1b-46ae-bd49-41a7eb5ddae2 (Single GET)
+- api/v1/categories/5bd2f37a-ff1b-46ae-bd49-41a7eb5ddae2 (PATCH)
+- api/v1/categories/5bd2f37a-ff1b-46ae-bd49-41a7eb5ddae2 (DELETE)
 
 ### Books
 
