@@ -30,11 +30,11 @@ router.get('/:categoryId/category', getBookByCategoryId);
 
 router.patch(
 	'/:id',
-
+	auth(ENUM_USER_ROLE.ADMIN),
 	validateRequest(bookValidation.updateBookZodSchema),
 	updateBook
 );
 
-router.delete('/:id', deletBook);
+router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), deletBook);
 
 export const bookRoutes = router;
