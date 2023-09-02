@@ -1,3 +1,4 @@
+import { User } from '@prisma/client';
 import prisma, { prismaExclude } from '../../../shared/prisma';
 import { IUserResponse } from './user.interface';
 
@@ -16,4 +17,22 @@ const getUserById = async (id: string): Promise<IUserResponse | null> => {
 	});
 	return result;
 };
-export const userService = { getAllUsers, getUserById };
+
+const updateUser = async (id: string, data: Partial<User>): Promise<User> => {
+	const result = await prisma.user.update({
+		where: { id },
+		data,
+	});
+
+	return result;
+};
+
+const deleteUser = async (id: string): Promise<User> => {
+	const result = await prisma.user.delete({
+		where: { id },
+	});
+
+	return result;
+};
+
+export const userService = { getAllUsers, getUserById, updateUser, deleteUser };
