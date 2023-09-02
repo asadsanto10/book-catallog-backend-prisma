@@ -1,6 +1,7 @@
 export interface IPageOtions {
 	page?: number;
-	limit?: number;
+	size?: number;
 	sortBy?: string;
+	totalPage?: number;
 	sortOrder?: 'asc' | 'desc';
 }

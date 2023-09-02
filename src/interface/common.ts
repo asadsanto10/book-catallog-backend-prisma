@@ -2,7 +2,8 @@ export interface IGenericResponse<T> {
 	data: T;
 	meta: {
 		page: number;
-		limit: number;
+		size: number;
 		total: number;
+		totalPage?: number;
 	};
 }

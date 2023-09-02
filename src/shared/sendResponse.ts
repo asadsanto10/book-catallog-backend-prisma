@@ -9,8 +9,9 @@ const sendResponse = <T>(
 		data?: T | null;
 		meta?: {
 			page: number;
-			limit: number;
+			size: number;
 			total: number;
+			totalPage?: number;
 		};
 	}
 ): void => {

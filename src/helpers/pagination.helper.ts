@@ -4,19 +4,24 @@ interface IPageOptionsReturn extends Partial<IPageOtions> {
 	skip?: number;
 }
 
-const calculatePagination = (pageOptions: Partial<IPageOtions>): IPageOptionsReturn => {
+const calculatePagination = (
+	pageOptions: Partial<IPageOtions>,
+	total: number
+): IPageOptionsReturn => {
 	const page = Number(pageOptions.page || 1);
-	const limit = Number(pageOptions.limit || 10);
-	const skip = (page - 1) * limit;
+	const size = Number(pageOptions.size || 10);
+	const skip = (page - 1) * size;
+	const totalPage = Math.ceil(total / size);
 
 	const sortBy = pageOptions.sortBy || 'createdAt';
 	const sortOrder = pageOptions.sortOrder || 'desc';
 	return {
 		page,
-		limit,
+		size,
 		skip,
 		sortBy,
 		sortOrder,
+		totalPage,
 	};
 };
 

@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { authRoutes } from '../modules/auth/auth.route';
+import { bookRoutes } from '../modules/book/book.route';
 import { categoryRoutes } from '../modules/category/category.route';
 import { userRoutes } from '../modules/user/user.route';
 
@@ -13,6 +14,7 @@ router.get('/health', (_req, res) => {
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/categories', categoryRoutes);
+router.use('/books', bookRoutes);
 
 // not found route
 router.use((req: Request, res: Response, next: NextFunction) => {
