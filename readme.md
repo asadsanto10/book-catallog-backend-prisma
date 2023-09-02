@@ -51,4 +51,4 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MWNhNjUyZi03MTg3LTQz
 
 - api/v1/orders/create-order (POST)
 - api/v1/orders (GET)
-- api/v1/orders/:orderId (GET)
+- api/v1/orders/c86665e0-952b-4912-9508-34ab647820ff (GET)

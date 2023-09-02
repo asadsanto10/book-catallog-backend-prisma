@@ -40,3 +40,20 @@ export const getAllOrders: RequestHandler = async (req, res, next): Promise<void
 		next(error);
 	}
 };
+
+export const getOrderById: RequestHandler = async (req, res, next): Promise<void> => {
+	try {
+		const { orderId } = req.params;
+
+		const result = await orderService.getOrderById(orderId);
+
+		sendResponse<Order>(res, {
+			statusCode: httpStatus.OK,
+			status: 'success',
+			message: 'Order fetch successfully',
+			data: result,
+		});
+	} catch (error) {
+		next(error);
+	}
+};
