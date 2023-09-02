@@ -42,10 +42,10 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MWNhNjUyZi03MTg3LTQz
 
 - api/v1/books/create-book (POST)
 - api/v1/books (GET)
-- api/v1/books/:categoryId/category (GET)
-- api/v1/books/:id (GET)
-- api/v1/books/:id (PATCH)
-- api/v1/books/:id (DELETE)
+- api/v1/books/5bd2f37a-ff1b-46ae-bd49-41a7eb5ddae2/category (GET)
+- api/v1/books/f17c2818-0324-4dbb-8f35-404a18f5a401 (GET)
+- api/v1/books/f17c2818-0324-4dbb-8f35-404a18f5a401 (PATCH)
+- api/v1/books/f17c2818-0324-4dbb-8f35-404a18f5a401 (DELETE)
 
 ### Orders
 

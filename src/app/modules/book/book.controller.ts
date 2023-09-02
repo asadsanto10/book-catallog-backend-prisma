@@ -41,54 +41,71 @@ export const getAllBooks: RequestHandler = async (req, res, next): Promise<void>
 	}
 };
 
-// export const getBookById: RequestHandler = async (req, res, next): Promise<void> => {
-// 	try {
-// 		const { id } = req.params;
+export const getBookByCategoryId: RequestHandler = async (req, res, next): Promise<void> => {
+	try {
+		const { categoryId } = req.params;
 
-// 		const result = await bookService.getBookById(id);
+		const result = await bookService.getBookByCategoryId(categoryId);
 
-// 		sendResponse<Book>(res, {
-// 			statusCode: httpStatus.OK,
-// 			status: 'success',
-// 			message: 'Book fetch successfully',
-// 			data: result,
-// 		});
-// 	} catch (error) {
-// 		next(error);
-// 	}
-// };
+		sendResponse<Book[]>(res, {
+			statusCode: httpStatus.OK,
+			status: 'success',
+			message: 'Books with associated category data fetch successfully',
+			data: result,
+		});
+	} catch (error) {
+		next(error);
+	}
+};
 
-// export const updateBook: RequestHandler = async (req, res, next): Promise<void> => {
-// 	try {
-// 		const { id } = req.params;
-// 		const data = req.body as Partial<Category>;
+export const getBookById: RequestHandler = async (req, res, next): Promise<void> => {
+	try {
+		const { id } = req.params;
 
-// 		const result = await bookService.updateBook(id, data);
+		const result = await bookService.getBookById(id);
 
-// 		sendResponse<Book>(res, {
-// 			statusCode: httpStatus.OK,
-// 			status: 'success',
-// 			message: 'Book update successfully',
-// 			data: result,
-// 		});
-// 	} catch (error) {
-// 		next(error);
-// 	}
-// };
+		sendResponse<Book>(res, {
+			statusCode: httpStatus.OK,
+			status: 'success',
+			message: 'Book fetch successfully',
+			data: result,
+		});
+	} catch (error) {
+		next(error);
+	}
+};
 
-// export const deletBook: RequestHandler = async (req, res, next): Promise<void> => {
-// 	try {
-// 		const { id } = req.params;
+export const updateBook: RequestHandler = async (req, res, next): Promise<void> => {
+	try {
+		const { id } = req.params;
+		const data = req.body as Partial<Book>;
 
-// 		const result = await bookService.deletBook(id);
+		const result = await bookService.updateBook(id, data);
 
-// 		sendResponse<Book>(res, {
-// 			statusCode: httpStatus.OK,
-// 			status: 'success',
-// 			message: 'Book delete successfully',
-// 			data: result,
-// 		});
-// 	} catch (error) {
-// 		next(error);
-// 	}
-// };
+		sendResponse<Book>(res, {
+			statusCode: httpStatus.OK,
+			status: 'success',
+			message: 'Book update successfully',
+			data: result,
+		});
+	} catch (error) {
+		next(error);
+	}
+};
+
+export const deletBook: RequestHandler = async (req, res, next): Promise<void> => {
+	try {
+		const { id } = req.params;
+
+		const result = await bookService.deletBook(id);
+
+		sendResponse<Book>(res, {
+			statusCode: httpStatus.OK,
+			status: 'success',
+			message: 'Book delete successfully',
+			data: result,
+		});
+	} catch (error) {
+		next(error);
+	}
+};

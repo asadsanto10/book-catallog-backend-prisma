@@ -110,38 +110,47 @@ const getAllBooks = async (
 	};
 };
 
-// const getBookById = async (id: string): Promise<Book | null> => {
-// 	const result = await prisma.category.findUnique({
-// 		where: { id },
-// 		include: {
-// 			books: true,
-// 		},
-// 	});
+const getBookByCategoryId = async (categoryId: string): Promise<Book[] | null> => {
+	const result = await prisma.book.findMany({
+		where: { categoryId },
+	});
 
-// 	return result;
-// };
+	return result;
+};
 
-// const updateBook = async (id: string, data: Partial<Book>): Promise<Book> => {
-// 	const result = await prisma.category.update({
-// 		where: { id },
-// 		data,
-// 	});
+const getBookById = async (id: string): Promise<Book | null> => {
+	const result = await prisma.book.findUnique({
+		where: { id },
+		include: {
+			category: true,
+		},
+	});
 
-// 	return result;
-// };
+	return result;
+};
 
-// const deletBook = async (id: string): Promise<Book> => {
-// 	const result = await prisma.category.delete({
-// 		where: { id },
-// 	});
+const updateBook = async (id: string, data: Partial<Book>): Promise<Book> => {
+	const result = await prisma.book.update({
+		where: { id },
+		data,
+	});
 
-// 	return result;
-// };
+	return result;
+};
+
+const deletBook = async (id: string): Promise<Book> => {
+	const result = await prisma.book.delete({
+		where: { id },
+	});
+
+	return result;
+};
 
 export const bookService = {
 	createBook,
 	getAllBooks,
-	// getBookById,
-	// updateBook,
-	// deletBook,
+	getBookByCategoryId,
+	getBookById,
+	updateBook,
+	deletBook,
 };
