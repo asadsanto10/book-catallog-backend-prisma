@@ -4,8 +4,6 @@ import auth from '../../middlewares/auth/auth.middleware';
 import { validateRequest } from '../../middlewares/validateRequest/validateRequest';
 import { createOrder, getAllOrders, getOrderById } from './order.controller';
 import { orderValidation } from './order.validation';
-// prettier-ignore
-// prettier-ignore
 
 const router = express.Router();
 
